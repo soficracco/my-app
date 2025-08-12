@@ -1,13 +1,9 @@
 "use client"
 
-export default function Input(){
-    function escribi(){
-        console.log("Me escribí")
-    }
-
+export default function Input(props){
     return(
         <>
-            <input type="text" onChange={escribi}></input>
+            <input type={props.type} onChange={props.onChange} value={props.value}></input>
         </>
     )
 }
