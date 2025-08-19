@@ -1,0 +1,12 @@
+.button{
+    height: 30px;
+    border-radius: 10px;
+}
+
+.incrementando{
+    background-color: green;
+}
+
+.decrementando{
+    background-color: pink;
+}

@@ -1,5 +1,6 @@
 "use client"
 
+import clsx from 'clsx';
 import Button from "@/components/Button"
 import Input from "@/components/Input"
 import Title from "@/components/Title"
@@ -16,6 +17,8 @@ export default function contadorPage(){
             setCuenta(0)
         }
     })
+    
+
 
   
     function manejarBoton(){
@@ -39,10 +42,11 @@ export default function contadorPage(){
     return(
         <>
             <Title text="Pagina contador"></Title>
-            <Button texto="Cambiar valor" funcionalidad={manejarBoton}></Button>
+            <Button texto="Sube y Baja " funcionalidad={manejarBoton}></Button>
             <Input type="checkbox" onChange={cambioCheck}></Input>
             <Input type="text" onChange={guardarInput}></Input>
-        </>
+            <p>Contador:{cuenta} </p>
+        </>             
     )
         
-}
+}                                           
