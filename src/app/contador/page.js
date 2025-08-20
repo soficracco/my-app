@@ -1,14 +1,18 @@
 "use client"
 
-import clsx from 'clsx';
 import Button from "@/components/Button"
 import Input from "@/components/Input"
 import Title from "@/components/Title"
 import { useEffect, useState } from "react"
+
+import clsx from "clsx";
+
+
 export default function contadorPage(){
 
     const [cuenta, setCuenta] = useState(0)
     const [checked, setChecked] =useState(false)
+    const [color, setColor] = useState("rosa");
 
     useEffect(() =>{
         if (cuenta >= 20){
@@ -32,7 +36,16 @@ export default function contadorPage(){
     }
     function cambioCheck(event){
         setChecked(event.target.checked)
+        setColor(event.target.checked ? "verde" : "rosa")
+
+        if (event.target.checked){
+            setColor("verde")
+        } else {
+            setColor("rosa")
+        }
     }
+    
+
 
     function guardarInput(event){
         setCuenta(event.target.value)
@@ -41,11 +54,17 @@ export default function contadorPage(){
    
     return(
         <>
+
+        {cuenta == 0 && <h3>El contador vale 0 </h3>} 
+        {   cuenta >= 0 ? <h3>el contador es positivo</h3>
+            : <h3>el contador es negativo</h3>
+            
+        }
             <Title text="Pagina contador"></Title>
-            <Button texto="Sube y Baja " funcionalidad={manejarBoton}></Button>
+            <Button texto="Sube y Baja " funcionalidad={manejarBoton} color={color}></Button>
             <Input type="checkbox" onChange={cambioCheck}></Input>
-            <Input type="text" onChange={guardarInput}></Input>
-            <p>Contador:{cuenta} </p>
+            
+            <h3>Contador:{cuenta} </h3>
         </>             
     )
         

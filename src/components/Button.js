@@ -1,5 +1,8 @@
 "use client"
 
+import clsx from "clsx";
+import styles from "@/components/Button.module.css"
+
 export default function Button(props){
     return(
         <>
@@ -15,8 +18,7 @@ export default function Button(props){
                 )       
                 
 
-                }
-                onClick={props.funcionalidad}>{props.texto}</button>
+                } onClick={props.funcionalidad}>{props.texto}</button>
         </>
     )
 }
